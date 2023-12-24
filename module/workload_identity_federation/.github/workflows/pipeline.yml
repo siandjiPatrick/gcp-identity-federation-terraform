@@ -1,0 +1,13 @@
+name: connect to gcp to manage resources
+on:
+    push: 
+        branches: ["main"]
+
+jobs:
+    auth:
+        runs-on: ubuntu-lates
+        steps:
+            - name: authicate-to-gcp
+              run: echo " wellcome to my workflow"
+              
+    
