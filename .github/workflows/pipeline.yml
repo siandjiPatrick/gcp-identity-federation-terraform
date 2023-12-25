@@ -55,7 +55,7 @@ jobs:
       needs: [ authenticate-to-gcp, checkout-github-repository]
       steps:
         - name: install terraform
-          run: install hashicorp
+          run: echo "install hashicorp"
 
 
 
