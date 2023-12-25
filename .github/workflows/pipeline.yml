@@ -29,7 +29,7 @@ jobs:
               id: auth
               uses: 'google-github-actions/auth@v2'
               with:
-                service_account:            ${{ secrets.GITHUB_SERVICE_ACCOUNT }} 
+                service_account:            ${{ secrets.SERVICE_ACCOUNT }} 
                 workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
                 token_format:               ${{ env.token_format}}
 
