@@ -15,7 +15,7 @@ jobs:
         env:
             token_format: id_token
         outputs:
-            credentials_file_path: 
+            #credentials_file_path: 
             project_id:     ${{ steps.auth.outputs.project_id }}
             auth_token:     ${{ steps.auth.outputs.auth_token }}
             access_token:   ${{ steps.auth.outputs.access_token }}
@@ -31,7 +31,7 @@ jobs:
               with:
                 service_account:            ${{ secrets.SERVICE_ACCOUNT }} 
                 workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
-                token_format:               ${{ env.token_format}}
+                #token_format:               ${{ env.token_format}}
 
     print-auth-informations:
         runs-on: ubuntu-latest
