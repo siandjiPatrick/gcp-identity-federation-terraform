@@ -4,10 +4,51 @@ on:
         branches: ["main"]
 
 jobs:
-    auth:
+    checkout-github-repository:
         runs-on: ubuntu-latest
         steps:
-            - name: authicate-to-gcp
-              run: echo " wellcome to my workflow"
-              
+        - name: checkout-github-repository
+          uses: checkout/checkout@v4
+
+    authenticate-to-gcp:
+        runs-on: ubuntu-latest
+        env:
+            token_format: id_token
+        outputs:
+            credentials_file_path: 
+            project_id:     ${{ steps.auth.outputs.project_id }}
+            auth_token:     ${{ steps.auth.outputs.auth_token }}
+            access_token:   ${{ steps.auth.outputs.access_token }}
+            id_token:       ${{ steps.auth.outputs.id_token }}
+
+        permissions: 
+            contents: read
+            id-token: write
+        steps:
+            - name: authenticate-to-gcp
+              id: auth
+              uses: 'google-github-actions/auth@v4'
+              with:
+                service_account:            ${{ secrets.GITHUB_SERVICE_ACCOUNT }} 
+                workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+                token_format:               ${{ env.token_format}}
+
+    print-auth-informations:
+        runs-on: ubuntu-latest
+        needs: authenticate-to-gcp
+        
+        steps:
+            - name: print-auth_token
+              run: echo ${{ needs.authenticate-to-gcp.outputs.auth_token}}
+
+            - name: print-project-id
+              run: echo ${{ needs.authenticate-to-gcp.outputs.project_id}}
+
+            - name: print-id-token
+              run: echo ${{ needs.authenticate-to-gcp.outputs.id_token}}
+
+            - name: print-access-token
+              run: echo ${{ needs.authenticate-to-gcp.outputs.access_token}}
+
+
     
