@@ -30,123 +30,88 @@ No required inputs.
 
 The following input variables are optional (have default values):
 
-. attribute_mapping
+### Description: GCP Project parameters
+- project_id
+Type: `string`
+Default: `"terraform-patrickstyl"`
 
+- project_number>>
 Description: n/a
+Type: `string`
+Default: `"142963639085"`
 
-Type: `map(string)`
+---
 
+### Description: iam params
+
+- iam_members
+Type: `list(string)`
 Default:
-[source,json]
+[
+  "principal://iam.googleapis.com/projects/142963639085/locations/global/workloadIdentityPools/github-pool/subject/assertion.sub",
+  "principalSet://iam.googleapis.com/projects/142963639085/locations/global/workloadIdentityPools/github-pool/attribute.repository/siandjiPatrick/gcp-workload-identity-federation-with-terraform"
+]
 
+---
+
+
+### Description: Workflow Identity Federation Params
+
+- identity_pool_name
+Type: `string`
+Default: `"github-pool"`
+
+- oidc_token_issuer
+Description: n/a
+Type: `string`
+Default: `"https://token.actions.githubusercontent.com"`
+
+- attribute_mapping
+Description: n/a
+Type: `map(string)`
+Default:
 {
   "attribute.aud": "assertion.aud",
   "attribute.repository": "assertion.repositoy",
   "google.subject": "assertion.sub"
 }
 
-
 - display_name
-
 Description: n/a
-
 Type: `string`
-
 Default: `"github provider"`
 
 - github_repository 
-
 Description: n/a
-
 Type: `string`
-
 Default: `"gcp-workload-identity-federation-with-terraform"`
 
 - github_username
-
 Description: n/a
-
 Type: `string`
-
 Default: `"siandjiPatrick"`
 
-- iam_members
-
-Description: ## iam params
-
-Type: `list(string)`
-
-Default:
-[source,json]
-
-[
-  "principal://iam.googleapis.com/projects/142963639085/locations/global/workloadIdentityPools/github-pool/subject/assertion.sub",
-  "principalSet://iam.googleapis.com/projects/142963639085/locations/global/workloadIdentityPools/github-pool/attribute.repository/siandjiPatrick/gcp-workload-identity-federation-with-terraform"
-]
-
-
-- identity_pool_name
-
-### Description: Workflow Identity Federation Params
-
-Type: `string`
-
-Default: `"github-pool"`
-
-oidc_token_issuer
-
-Description: n/a
-
-Type: `string`
-
-Default: `"https://token.actions.githubusercontent.com"`
-
-- project_id
-
-### Description: GCP Project parameters
-
-Type: `string`
-
-Default: `"terraform-patrickstyl"`
-
-- project_number>>
-
-Description: n/a
-
-Type: `string`
-
-Default: `"142963639085"`
-
 - provider_description
-
 Description: n/a
-
 Type: `string`
-
 Default: `"github OIDC identity pool provider for automated test"`
 
 - provider_name
-
 Description: n/a
-
 Type: `string`
-
 Default: `"github-provider"`
 
-- service_account_display_name
-
-Description: n/a
-
-Type: `string`
-
-Default: `"github service account"`
-
-- service_account_name
+---
 
 ###  Description: Service Account params  
 
+- service_account_display_name
+Description: n/a
 Type: `string`
+Default: `"github service account"`
 
+- service_account_name
+Type: `string`
 Default: `"github-service-account"`
 
 ## Outputs
@@ -154,13 +119,10 @@ Default: `"github-service-account"`
 The following outputs are exported:
 
 - provider_status
-
 Description: n/a
 
 - service_account_email
-
 Description: n/a
 
 - workload_identity_provider 
-
 Description: n/a
