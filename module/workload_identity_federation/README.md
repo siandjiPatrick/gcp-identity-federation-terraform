@@ -6,7 +6,7 @@ No requirements.
 
 The following providers are used by this module:
 
-- [[provider_google]] <<provider_google,google>>
+- google
 
 # Modules
 
@@ -26,11 +26,11 @@ The following resources are used by this module:
 # Required Inputs
 
 No required inputs.
-== Optional Inputs
+## Optional Inputs
 
 The following input variables are optional (have default values):
 
-=== [[input_attribute_mapping]] <<input_attribute_mapping,attribute_mapping>>
+. attribute_mapping
 
 Description: n/a
 
@@ -46,7 +46,7 @@ Default:
 }
 ----
 
-=== [[input_display_name]] <<input_display_name,display_name>>
+- display_name
 
 Description: n/a
 
@@ -54,7 +54,7 @@ Type: `string`
 
 Default: `"github provider"`
 
-=== [[input_github_repository]] <<input_github_repository,github_repository>>
+- github_repository 
 
 Description: n/a
 
@@ -62,7 +62,7 @@ Type: `string`
 
 Default: `"gcp-workload-identity-federation-with-terraform"`
 
-=== [[input_github_username]] <<input_github_username,github_username>>
+- github_username
 
 Description: n/a
 
@@ -70,7 +70,7 @@ Type: `string`
 
 Default: `"siandjiPatrick"`
 
-=== [[input_iam_members]] <<input_iam_members,iam_members>>
+- iam_members
 
 Description: ## iam params
 
@@ -85,15 +85,15 @@ Default:
 ]
 ----
 
-=== [[input_identity_pool_name]] <<input_identity_pool_name,identity_pool_name>>
+- identity_pool_name
 
-Description: #### Workflow Identity Federation Params ##############
+### Description: Workflow Identity Federation Params
 
 Type: `string`
 
 Default: `"github-pool"`
 
-=== [[input_oidc_token_issuer]] <<input_oidc_token_issuer,oidc_token_issuer>>
+oidc_token_issuer
 
 Description: n/a
 
@@ -101,15 +101,15 @@ Type: `string`
 
 Default: `"https://token.actions.githubusercontent.com"`
 
-=== [[input_project_id]] <<input_project_id,project_id>>
+- project_id
 
-Description: ####### GCP Project parameters #############
+### Description: GCP Project parameters
 
 Type: `string`
 
 Default: `"terraform-patrickstyl"`
 
-=== [[input_project_number]] <<input_project_number,project_number>>
+- project_number>>
 
 Description: n/a
 
@@ -117,7 +117,7 @@ Type: `string`
 
 Default: `"142963639085"`
 
-=== [[input_provider_description]] <<input_provider_description,provider_description>>
+- provider_description
 
 Description: n/a
 
@@ -125,7 +125,7 @@ Type: `string`
 
 Default: `"github OIDC identity pool provider for automated test"`
 
-=== [[input_provider_name]] <<input_provider_name,provider_name>>
+- provider_name
 
 Description: n/a
 
@@ -133,7 +133,7 @@ Type: `string`
 
 Default: `"github-provider"`
 
-=== [[input_service_account_display_name]] <<input_service_account_display_name,service_account_display_name>>
+- service_account_display_name
 
 Description: n/a
 
@@ -141,23 +141,23 @@ Type: `string`
 
 Default: `"github service account"`
 
-=== [[input_service_account_name]] <<input_service_account_name,service_account_name>>
+- service_account_name
 
-Description: ############  Service Account params  #######################
+###  Description: Service Account params  
 
 Type: `string`
 
 Default: `"github-service-account"`
 
-== Outputs
+## Outputs
 
 The following outputs are exported:
 
-=== [[output_provider_status]] <<output_provider_status,provider_status>>
+- provider_status
 
 Description: n/a
 
-=== [[output_service_account_email]] <<output_service_account_email,service_account_email>>
+- service_account_email
 
 Description: n/a
 
