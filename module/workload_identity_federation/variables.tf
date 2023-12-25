@@ -1,12 +1,7 @@
+#############  Service Account params  #######################
 variable "service_account_name" {
   type    = string
   default = "github-service-account"
-}
-
-variable "terraform_version" {
-  type    = string
-  default = "1.6.6"
-
 }
 
 variable "service_account_display_name" {
@@ -15,6 +10,7 @@ variable "service_account_display_name" {
 }
 
 
+##### Workflow Identity Federation Params ##############
 variable "identity_pool_name" {
   type    = string
   default = "github-pool"
@@ -50,6 +46,7 @@ variable "provider_name" {
   default = "github-provider"
 }
 
+######## GCP Project parameters #############
 variable "project_id" {
   type    = string
   default = "terraform-patrickstyl"
@@ -72,3 +69,15 @@ variable "github_repository" {
   default = "gcp-workload-identity-federation-with-terraform"
 
 }
+
+### iam params
+variable "iam_members" {
+  type    = list(string)
+  default = [ 
+    
+    "principal://iam.googleapis.com/projects/142963639085/locations/global/workloadIdentityPools/github-pool/subject/assertion.sub",
+    "principalSet://iam.googleapis.com/projects/142963639085/locations/global/workloadIdentityPools/github-pool/attribute.repository/siandjiPatrick/gcp-workload-identity-federation-with-terraform"
+  ]
+
+}
+
