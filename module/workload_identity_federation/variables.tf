@@ -1,6 +1,6 @@
 variable "service_account_name" {
   type    = string
-  default = "my-service-account"
+  default = "github-service-account"
 }
 
 variable "terraform_version" {
