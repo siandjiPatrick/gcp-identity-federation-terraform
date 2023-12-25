@@ -49,6 +49,15 @@ jobs:
 
             - name: print-access-token
               run: echo ${{ needs.authenticate-to-gcp.outputs.access_token}}
+    
+    setup-terraform:
+      runs-on: ubuntu-latest
+      needs: [ authenticate-to-gcp, checkout-github-repository]
+      steps:
+        - name: install terraform
+          run: install hashicorp
+
+
 
 
     
