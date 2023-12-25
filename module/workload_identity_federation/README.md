@@ -38,13 +38,13 @@ Type: `map(string)`
 
 Default:
 [source,json]
-----
+
 {
   "attribute.aud": "assertion.aud",
   "attribute.repository": "assertion.repositoy",
   "google.subject": "assertion.sub"
 }
-----
+
 
 - display_name
 
@@ -78,12 +78,12 @@ Type: `list(string)`
 
 Default:
 [source,json]
-----
+
 [
   "principal://iam.googleapis.com/projects/142963639085/locations/global/workloadIdentityPools/github-pool/subject/assertion.sub",
   "principalSet://iam.googleapis.com/projects/142963639085/locations/global/workloadIdentityPools/github-pool/attribute.repository/siandjiPatrick/gcp-workload-identity-federation-with-terraform"
 ]
-----
+
 
 - identity_pool_name
 
@@ -161,6 +161,6 @@ Description: n/a
 
 Description: n/a
 
-=== [[output_workload_identity_provider]] <<output_workload_identity_provider,workload_identity_provider>>
+- workload_identity_provider 
 
 Description: n/a
