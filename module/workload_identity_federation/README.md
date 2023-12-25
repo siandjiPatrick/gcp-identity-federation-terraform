@@ -1,18 +1,18 @@
-== Requirements
+# Requirements
 
 No requirements.
 
-== Providers
+# Providers
 
 The following providers are used by this module:
 
 - [[provider_google]] <<provider_google,google>>
 
-== Modules
+# Modules
 
 No modules.
 
-== Resources
+# Resources
 
 The following resources are used by this module:
 
@@ -23,7 +23,7 @@ The following resources are used by this module:
 - https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account[google_service_account.github_service_account] (resource)
 - https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_binding[google_service_account_iam_binding.oidc_provider_role_for_srv_account] (resource)
 
-== Required Inputs
+# Required Inputs
 
 No required inputs.
 == Optional Inputs
